@@ -1,5 +1,5 @@
 const request = require('request')
-const keys = require('./keys')
+const keys = require('./keys') || process.env
 
 const forecast = (latitude, longitude, callback)=>{
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&units=metric&exclude=minutely,hourly,daily&appid=${keys.openweatherAppId}`
